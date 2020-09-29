@@ -10,31 +10,32 @@ The simulation:
 * can have any number of input variables
 * is given arrays of values for each input variable
 * calculates a single output value for each combination of input values
-* produces a single JSON object as output, that contains all of the provided input values, as well as the results of running the simulation against all possible combinations of those input values.
+* produces a single JSON object as output that contains all of the provided input values, as well as the results of running the simulation against all possible combinations of those input values.
 
+Here's a visual representation of the process:
 
 ![Output Logo](./../diagrams/output-format.png)
 
-**Your task is to create an object that takes one of these simulation output objects as an input, described below, and transform it into a 2-dimensional array that looks like this:**
+**Your task is to create a function that takes one of these simulation output objects as an input, described below, and transform it into a 2-dimensional array that looks like this:**
 
 ```
 [
-    [input-1-1, input-2-1, input-3-1, output-1-1-1],
-    [input-1-2, input-2-1, input-3-1, output-2-1-1],
-    [input-1-3, input-2-1, input-3-1, output-3-1-1],
+    [input-1-1, input-2-1, input-3-1, input-..., output-N-1],
+    [input-1-2, input-2-1, input-3-1, input-..., output-N-2],
+    [input-1-3, input-2-1, input-3-1, input-..., output-N-3],
     ...
-    [input-1-i, input-2-j, input-3-k, output-i-j-k]
+    [input-1-I, input-2-J, input-3-K, input-..., output-N-X],
 ]
 ```
 
 ## Inputs
-The input to your component is an output from a simulation.
+The input to your function is an output from a simulation.
 
 A given simulation output consists of:
 
-1. metadata providing details on the input and output variables, which are used to locate and extract the variable values used in the simulation.
-2. arrays of input variables, which contain arrays of values that were used as the inputs for the analysis.
-3. arrays of model output values for all possible combinations of input values.
+1. metadata providing details on the input and output variables, which are used to locate and extract the data.
+2. arrays of values for each input variable to use in the simulation.
+3. a multidimensional array of model output values for all possible combinations of input values.
 
 
 ## The Metadata Object Attributes
@@ -50,9 +51,9 @@ Each simulation output is guaranteed to have the 2 following keys:
 }
 ```
 
-These two keys should be read to find the keys to the simulation inputs and outputs.
+These two keys contain the information on where the input and output values are located within the given object.
 
-### The Input Variables/Values
+## The Input Variables/Values
 
 The root-level `variables` key, an array of strings, provides the names of the input variables.
 
@@ -103,11 +104,11 @@ A model consisting of an output variable named `number_of_days` would look like 
 
 The array of output values is an `N`-dimensional array, where `N` is the number of input variables. Each array dimension corresponds to a particular input variable, whose order is defined by its position in the `variables` input array.
 
-Each output dimension is an array that has the same length as the array of input values for that particular variable. The index of an element in a dimension array points to the value used for that variable in the corresponding input value array.
+Each array dimension is an array that has the same length as the array of input values for that particular variable. The index of an element in a dimension array points to the value used for that variable in the corresponding input value array.
 
 ## Example
 
-Let's say the output from a simulation that you're given looks like this:
+Let's say the output from a simulation you're given looks like this:
 
 ```
 {
@@ -125,7 +126,7 @@ Let's say the output from a simulation that you're given looks like this:
 ```
 
 1. Looking at `variables`, there are 3 input variables; `latitude`, `longitude` and `year`; so the output should be a 3-dimensional array
-2. Looking at `mapping`, there is a single output variable named `number_of_days`
+2. Looking at `mapping`, there is a single output variable named `number_of_days`, which should be a 3-dimensional array
 3. Input Values
 
     a. The first value in `variables` is `latitude`, so the first dimension of `number_of_days` corresponds to the `latitude` array which has a length of 3, so the first dimension of the output array also has a length of 3.
