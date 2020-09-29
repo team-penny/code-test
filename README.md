@@ -14,7 +14,7 @@ The simulation:
 
 Here's a visual representation of the process:
 
-![Output Logo](./../diagrams/output-format.png)
+![Output Logo](/output-format.png)
 
 **Your task is to create a function that takes one of these simulation output objects as an input, described below, and transform it into a 2-dimensional array that looks like this:**
 
