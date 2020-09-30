@@ -115,7 +115,7 @@ Each array dimension is an array that has the same length as the array of input 
 Let's say the output from a simulation you're given looks like this:
 
 ```
-{
+const data = {
     "variables": ['latitude', 'longitude', 'year'],
     "mapping": 'number_of_days',
     "latitude": [40.71708, 29.452412, 38.370274],
