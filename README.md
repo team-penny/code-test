@@ -63,17 +63,17 @@ So if a simulation was run with 3 input variables named `latitude`, `longitude` 
 
 ```
 {
-        "variables": ['latitude', 'longitude', 'year']
+        "variables": ["latitude", "longitude", "year"]
 }
 ```
 
 Each input variable in the `variables` array has a corresponding root-level key of the same name, which is an array containing every possible input value for that variable.
 
-So given a `variables` key of  ```['latitude', 'longitude', 'year']```, the arrays of input values used in the analysis for each variable could like this:
+So given a `variables` key of  ```["latitude", "longitude", "year"]```, the arrays of input values used in the analysis for each variable could like this:
 
 ```
 {
-    "variables": ['latitude', 'longitude', 'year'],
+    "variables": ["latitude", "longitude", "year"],
     ...
     "latitude": [40.71708, 29.452412, 38.370274, 48.69622],
     "longitude": [236.875, 238.125, 251.5625, 279.0625, 275.625, 258.4375]
@@ -98,7 +98,7 @@ A model consisting of an output variable named `number_of_days` would look like 
 ```
 {
     ...
-    "mapping": 'number_of_days',
+    "mapping": "number_of_days",
     ...
     "number_of_days": [N-Dimensional of Output Values] 
 }
@@ -114,8 +114,8 @@ Let's say the output from a simulation you're given looks like this:
 
 ```
 const data = {
-    "variables": ['latitude', 'longitude', 'year'],
-    "mapping": 'number_of_days',
+    "variables": ["latitude", "longitude", "year"],
+    "mapping": "number_of_days",
     "latitude": [40.71708, 29.452412, 38.370274],
     "longitude": [236.875, 238.125, 251.5625, 279.0625],
     "year": [2020, 2021],
