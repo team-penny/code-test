@@ -20,11 +20,15 @@ Here's a visual representation of the process:
 
 ```
 [
-    [input-1-1, input-2-1, input-3-1, input-..., output-N-1],
-    [input-1-2, input-2-1, input-3-1, input-..., output-N-2],
-    [input-1-3, input-2-1, input-3-1, input-..., output-N-3],
+    [input-1-1, input-2-1, input-3-1, input-..., input-N-1, output-1],
+    [input-1-1, input-2-1, input-3-1, input-..., input-N-2, output-2],
+    [input-1-1, input-2-1, input-3-1, input-..., input-N-3, output-3],
     ...
-    [input-1-I, input-2-J, input-3-K, input-..., output-N-X],
+    [input-1-2, input-2-1, input-3-1, input-..., input-N-1, output-1],
+    [input-1-2, input-2-1, input-3-1, input-..., input-N-2, output-2],
+    [input-1-2, input-2-1, input-3-1, input-..., input-N-3, output-3],
+    ...
+    [input-1-I, input-2-J, input-3-K, input-..., input-N-Z, output-V],
 ]
 ```
 
