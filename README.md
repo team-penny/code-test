@@ -57,7 +57,7 @@ These two keys contain the information on where the input and output values are 
 
 The root-level `variables` key, an array of strings, provides the names of the input variables.
 
-So if a simulation was run with 3 input variables, the `variables` key would look like this:
+So if a simulation was run with 3 input variables named `latitude`, `longitude` and `year`, the `variables` key would look like this:
 
 ```
 {
