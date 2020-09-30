@@ -145,7 +145,7 @@ const data = {
    * 0 <= j < 4
    * 0 <= k < 2
 
-5. The input value for a particular variable can by found by referencing the input values array using the same index used in the output value. So for ```data.number_of_days[i][j][k]```:
+5. The input value for a particular variable can by found by referencing the corresponding input values array, using the same index used in the output value. So for ```data.number_of_days[i][j][k]```:
 
     a. The input value for `latitude` is found by data.latitude[i]
     
