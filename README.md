@@ -28,7 +28,7 @@ Here's a visual representation of the process:
 ]
 ```
 
-The output array should have ```I * J * K * ... * N``` rows, each row having ```N + 1``` elements.
+The output array should have ```I * J * K * ... * N``` rows, each row having ```N + 1``` elements (N input values along with the corresponding model output value).
 
 ## Inputs
 The input to your function is an output from a simulation.
