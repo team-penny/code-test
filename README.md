@@ -148,7 +148,9 @@ const data = {
 5. The input value for a particular variable can by found by referencing the input values array using the same index used in the output value. So for ```data.number_of_days[i][j][k]```:
 
     a. The input value for `latitude` is found by data.latitude[i]
+    
     b. The input value for `longitude` is found by data.longitude[j]
+    
     c. The input value for `year` is found by data.year[k]
 
 6. The output from the given input should be: 
